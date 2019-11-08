@@ -15,3 +15,9 @@ class User:
         self.age = age
         self.password = password
 
+    def saveUser(self):
+        '''
+        this method is that saves the users to the users_list
+        '''
+        User.users_list.append(self) 
+
