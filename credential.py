@@ -10,3 +10,12 @@ class Credential :
         self.filename = filename
         self.email = email
         self.password = password
+
+    def save_cred(self):
+        '''
+        this method saves credentials into our cred list
+        '''
+
+        Credential.creds_list.append(self)
+
+ 

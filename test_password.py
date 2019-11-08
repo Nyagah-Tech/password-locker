@@ -45,7 +45,7 @@ class passwordTest(unittest.TestCase):
         self.assertTrue(userExist)
 
 #creating credentials
-    def cred_init(self):
+    def testcred_init(self):
         '''
         is a test case that tests if an object initialized properly
         '''
@@ -53,6 +53,13 @@ class passwordTest(unittest.TestCase):
         self.assertEqual(self.new_cred.filename,"instagram")
         self.assertEqual(self.new_cred.email,"da@gmail.com")
         self.assertEqual(self.new_cred.password,"12345")
+
+    def testCred_save(self):
+        '''
+        it tests if we can save a credential into our cred_list
+        '''
+        self.new_cred.save_cred()
+        self.assertEqual(len(Credential.creds_list),1)
 
     
 
