@@ -61,6 +61,15 @@ class passwordTest(unittest.TestCase):
         self.new_cred.save_cred()
         self.assertEqual(len(Credential.creds_list),1)
 
+    def testmulti_cred_save(self):
+         '''
+         its a testcase that tests if multiple credentials can be saved
+         '''
+         self.new_cred.save_cred()
+         test_cred = Credential("fb","sa@gmail.com","1234")
+         test_cred.save_cred()
+         self.assertEqual(len(Credential.creds_list),2)
+
     
 
 if __name__ == '__main__':
