@@ -18,4 +18,9 @@ class Credential :
 
         Credential.creds_list.append(self)
 
- 
+    @classmethod
+    def cred_display(cls):
+        '''
+        returns the contact list
+        '''
+        return cls.creds_list

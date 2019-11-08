@@ -70,6 +70,13 @@ class passwordTest(unittest.TestCase):
          test_cred.save_cred()
          self.assertEqual(len(Credential.creds_list),2)
 
+    def testDisplay_cred(self):
+        '''
+        this testcase tests returns all the credentials saved.
+        '''
+        self.assertEqual(Credential.cred_display(),Credential.creds_list)
+
+
     
 
 if __name__ == '__main__':
