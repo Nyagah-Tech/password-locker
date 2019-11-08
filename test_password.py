@@ -1,5 +1,6 @@
 import unittest
 from user import User
+from credential import Credential
 
 class passwordTest(unittest.TestCase):
     '''
@@ -11,12 +12,14 @@ class passwordTest(unittest.TestCase):
         '''
         should run before each test case
         '''
-        self.new_user = User("Daniel","nyagah","dannyagah","age","password",) 
+        self.new_user = User("Daniel","nyagah","dannyagah","age","password")
+        self.new_cred = Credential("instagram","da@gmail.com","12345") 
     def tearDown(self):
         '''
         it clears or clean up after every case
         '''
         User.user_list = []
+        Credential.creds_list = []
 
     def user_init(self):
         self.assertEqual(self.new_user.firstname,"Daniel")
@@ -42,6 +45,15 @@ class passwordTest(unittest.TestCase):
         self.assertTrue(userExist)
 
 #creating credentials
+    def cred_init(self):
+        '''
+        is a test case that tests if an object initialized properly
+        '''
+
+        self.assertEqual(self.new_cred.filename,"instagram")
+        self.assertEqual(self.new_cred.email,"da@gmail.com")
+        self.assertEqual(self.new_cred.password,"12345")
+
     
 
 if __name__ == '__main__':
