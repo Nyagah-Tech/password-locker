@@ -16,7 +16,7 @@ class passwordTest(unittest.TestCase):
         '''
         it clears or clean up after every case
         '''
-        User.users_list = []
+        User.user_list = []
 
     def user_init(self):
         self.assertEqual(self.new_user.firstname,"Daniel")
@@ -31,8 +31,15 @@ class passwordTest(unittest.TestCase):
         testsave meselfthod saves the new user to the user list
         '''
         self.new_user.saveUser()
-        self.assertEqual(len(User.users_list),1)
+        self.assertEqual(len(User.user_list),1)
 
+    def testuser_exist_byusername(self):
+        '''
+        to check the existence of a user through the password inputted
+        '''
+        self.new_user.saveUser()
+        userExist = User.user_exist("dannyagah","password")
+        self.assertTrue(userExist)
 
 if __name__ == '__main__':
     unittest.main()
