@@ -18,6 +18,24 @@ class Credential :
 
         Credential.creds_list.append(self)
 
+    def del_cred(self):
+        '''
+        this deletes a credential"
+        '''
+        Credential.creds_list.remove(self)
+    @classmethod
+    def cred_exist(cls,filename):
+        '''
+        this method will check if a particular filename exists
+        Args:
+            filename:this is the file name that will be searched
+        return:
+                it will return the credential file with the secific filename
+        '''
+        for cred in cls.creds_list:
+            if cred.filename == filename:
+                return cred
+
     @classmethod
     def cred_display(cls):
         '''

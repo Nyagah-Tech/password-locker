@@ -19,7 +19,7 @@ def authenticate_user(username,password):
     '''
     this function authenticates users on login using their username and password
     '''
-    return User.user_exist(username,password)
+    return User.user_auth(username,password)
 
 def display_credentials():
     '''
@@ -27,6 +27,28 @@ def display_credentials():
     '''
     return User.cred_display()
 
+def valid_user(firstname,lastname,username,email,password):
+    '''
+    validates if the user has filled in all the fields required
+    '''
+    if firstname=="" or lastname=="" or username=="" or email=="" or password=="" :
+        return False
+    else:
+        return True
+
+#credentials
+
+def create_cred_for_existingfile(filename,email,passwords):
+    '''
+    it will create credentials of an existing account
+    '''
+    new_cred = Credential(filename,email,passwords)
+    return new_cred
+def save_creds(Credential):
+    '''
+    this function saves credentials
+    '''
+    Credential.save_cred()
 
 
 def main():
@@ -47,27 +69,44 @@ def main():
     print("enter your password of choice")
     password = input()
 
-    if firstname=="" or lastname=="" or username=="" or email=="" or password=="" :
-        print("please fill all the information required")
-    else:
+    validAcc = valid_user(firstname,lastname,username,email,password)
+    if validAcc:
         save_user(create_userAccount(firstname,lastname,username,email,password))
         print(f"{username} you have succesfully created a password locker account..")
         print('/n')
 
-    print("log in below with your username and password")
-    print('/n')
+        print("log in below with your username and password")
+        print('/n')
 
-    print("enter your username")
-    loguser = input()
-    print('/n')
+        print("enter your username")
+        loguser = input()
+        print('/n')
 
-    print("enter your password")
-    logPass = input()
+        print("enter your password")
+        logPass = input()
 
-    if authenticate_user(loguser,logPass):
-        print(f"{loguser} welcome to your account")
+        if authenticate_user(loguser,logPass):
+            print(f"{loguser} welcome to your account")
+
+            while True:
+                print("use the following shortcodes to navigate through the application")
+                print("short_code::: dd -to display all your saved credentials, dc -to delete a credential, fc -find credential by filename, cc -save credentials of an existing account, nc - make credentials for a new account")
+
+                code = input().lower()
+
+                if code == 'cc':
+                    print("saving credentials of an existing account or file")
+                    print
+
+
+
+
+        else:
+            print("invalid username or password")
     else:
-        print("invalid username or password")
+        print("please fill all fields required.")
+        
+        
 
 
 if __name__ == '__main__':

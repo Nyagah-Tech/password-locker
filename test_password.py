@@ -36,13 +36,13 @@ class passwordTest(unittest.TestCase):
         self.new_user.saveUser()
         self.assertEqual(len(User.user_list),1)
 
-    def testuser_exist_byusername(self):
-        '''
-        to check the existence of a user through the password inputted
-        '''
-        self.new_user.saveUser()
-        userExist = User.user_exist("dannyagah","password")
-        self.assertTrue(userExist)
+    # def testuser_exist_byusername(self):
+    #     '''
+    #     to check the existence of a user through the password inputted
+    #     '''
+    #     self.new_user.saveUser()
+    #     userExist = User.user_exist("dannyagah","password")
+    #     self.assertTrue(userExist)
 
 #creating credentials
     def testcred_init(self):
@@ -75,6 +75,29 @@ class passwordTest(unittest.TestCase):
         this testcase tests returns all the credentials saved.
         '''
         self.assertEqual(Credential.cred_display(),Credential.creds_list)
+
+
+    def testcred_exists(self):
+        '''
+        finds creditials using file name
+        '''
+        self.new_cred.save_cred()
+        test_cred = Credential("fb","sa@gmail.com","1234")
+        test_cred.save_cred()
+        cred_exists = Credential.cred_exist("fb")
+        self.assertEqual(cred_exists.email,test_cred.email)
+
+
+    def testDelete_cred(self):
+        '''
+        this testcase  tests if a user can delete a username
+        '''
+        self.new_cred.save_cred()
+        test_cred = Credential("fb","sa@gmail.com","1234")
+        test_cred.save_cred()
+        cred_del = Credential.cred_exist(test_cred.filename)
+        Credential.del_cred(cred_del)
+        self.assertEqual(len(Credential.creds_list),1)
 
 
     

@@ -22,7 +22,7 @@ class User:
         User.user_list.append(self) 
 
     @classmethod
-    def user_exist(cls,username,password):
+    def user_auth(cls,username,password):
         '''
         checks if an account exist using the username provided by the user
         Args:
