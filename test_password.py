@@ -25,7 +25,7 @@ class passwordTest(unittest.TestCase):
         self.assertEqual(self.new_user.firstname,"Daniel")
         self.assertEqual(self.new_user.lastname,"nyagah")
         self.assertEqual(self.new_user.username,"dannyagah")
-        self.assertEqual(self.new_user.age,"age")
+        self.assertEqual(self.new_user.email,"age")
         self.assertEqual(self.new_user.password,"password")
 
 

@@ -3,7 +3,7 @@ class User:
     used to generate instances of the new users
     '''
     user_list = []
-    def __init__(self,firstname,lastname,username,age,password,):
+    def __init__(self,firstname,lastname,username,email,password,):
         '''
         gives a blue print of how the users will be generated
         '''
@@ -12,7 +12,7 @@ class User:
         self.lastname = lastname
         self.username = username
         
-        self.age = age
+        self.email = email
         self.password = password
 
     def saveUser(self):
