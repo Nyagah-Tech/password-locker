@@ -98,7 +98,11 @@ class passwordTest(unittest.TestCase):
         cred_del = Credential.cred_exist(test_cred.filename)
         Credential.del_cred(cred_del)
         self.assertEqual(len(Credential.creds_list),1)
-
+    def test_display_cred(self):
+        '''
+        this testcase tests if the credentials can be diplayed
+        '''
+        self.assertEqual(Credential.cred_display(),Credential.creds_list)
 
     
 

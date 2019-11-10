@@ -44,11 +44,33 @@ def create_cred_for_existingfile(filename,email,passwords):
     '''
     new_cred = Credential(filename,email,passwords)
     return new_cred
+
 def save_creds(Credential):
     '''
     this function saves credentials
     '''
     Credential.save_cred()
+
+def delete_cred(Credential):
+    '''
+    this function will delete a credential list
+    '''
+    Credential.del_cred()
+
+def find_cred_byfilename(filename):
+    '''
+    this function will search for a credential with the given file filename
+    '''
+    return Credential.cred_exist(filename)
+
+def display_creds():
+    '''
+    this function wil display all the the saved credentials
+    '''
+    return 
+
+
+
 
 
 def main():
