@@ -67,7 +67,7 @@ def display_creds():
     '''
     this function wil display all the the saved credentials
     '''
-    return 
+    return Credential.cred_display()
 
 
 
