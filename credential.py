@@ -42,3 +42,15 @@ class Credential :
         returns the contact list
         '''
         return cls.creds_list
+    
+
+    @classmethod
+    def find_credential_byName(cls,del_filename):
+        '''
+        returns a boolean if a credential exist
+        '''
+        for cred in cls.creds_list:
+            if cred.filename == del_filename:
+                return True
+        return False
+
