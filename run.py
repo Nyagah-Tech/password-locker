@@ -96,7 +96,7 @@ def main():
 
     print("enter your password of choice")
     password = input()
-
+ 
     validAcc = valid_user(firstname,lastname,username,email,password)
     if validAcc:
         save_user(create_userAccount(firstname,lastname,username,email,password))
