@@ -1,7 +1,8 @@
 # The Akan Name Engine
 
 ## Description
-
+The password locker is an apllication that helps a user keep in track all password of his various accounts.
+the user can create new Account using the application and request the application to generate a password for the acoount.the user can also delete credentials of old accounts that eh/she nolonger need.
 ## Setup/Installation Requirements
 For this application to learn well ensure you have an updated browser and also you should be an english literate.
 ## Known Bugs
