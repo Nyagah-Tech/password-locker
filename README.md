@@ -1,4 +1,4 @@
-# The Akan Name Engine
+# The Password Locker
 
 ## Description
 The password locker is an apllication that helps a user keep in track all password of his various accounts.
