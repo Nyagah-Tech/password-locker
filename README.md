@@ -11,6 +11,8 @@ For this application to learn well ensure you have an updated browser and also y
 ## Support and contact details
  kindly reach out our support team @dannyagah13@gmail.com for any technical problem or any idea we can implement to ensure you get the result you need.
 ## BDD(Behaviour Driven Development 
+the user is required to create a user account the login with correct username and password.
+after login in the user is provided with shortcodes that will help him/her tpo navigate through the application
 ### License
 
 Copyright (c)2019 
